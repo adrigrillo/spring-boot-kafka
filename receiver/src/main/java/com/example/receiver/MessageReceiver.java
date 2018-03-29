@@ -13,6 +13,6 @@ public class MessageReceiver {
 
     @StreamListener(Sink.INPUT)
     private void receiveMessage(String message) {
-        log.info("Message received from Kafka: {0}", message);
+        log.info("Message received from Kafka: {}", message);
     }
 }

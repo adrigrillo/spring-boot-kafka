@@ -27,8 +27,8 @@ public class MessageProducer {
 
     @RequestMapping("/send")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    private void createMessage(@RequestParam(value = "msg") String message) {
-        log.info("Received petition, sending message. Message to send {0}", message);
+    private void createMessage(@RequestParam("message") String message) {
+        log.info("Received petition, sending message. Message to send [0]", message);
         source.output().send(MessageBuilder.withPayload(message).build());
     }
 }
